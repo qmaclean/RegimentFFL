@@ -16,17 +16,17 @@ library(nflfastR)
 library(nflreadr)
 library(shinythemes)
 library(rsconnect)
-library(caret)
-library(lme4)
-library(merTools)
+#library(caret)
+#library(lme4)
+#library(merTools)
 library(ggpmisc)
 library(grid)
 library(gridExtra)
 library(RColorBrewer)
 library(ggsci)
-library(googledrive)
+#library(googledrive)
 library(curl)
-library(arrow)
+#library(arrow)
 library(ggrepel)
 library(RCurl)
 library(ggimage)
@@ -149,33 +149,6 @@ keepers<-draft %>%
                 Draft.Position.to.End.of.Season.Rank,Position.Rank.by.End.of.Season.Delta)
 
 
-
-results %>%
-  ggplot() +
-  aes(x=week,y=Points,color=ManagerMatch) +
-  geom_jitter(alpha=0.3) + 
-  #stat_summary(fun="median",geom="point",size=0.3,
-  #             aes(color=ManagerMatch),shape=5,color="grey") +
-  geom_smooth(aes(color = ManagerMatch), alpha = 0.05) +
-  theme_minimal() +
-  theme(
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10),
-    plot.title = element_text(size = 16, hjust = 0.5),
-    plot.subtitle = element_text(size = 14, hjust = 0.5),
-    plot.caption = element_text(size = 12)
-  ) +
-  theme(legend.position = "bottom") +
-  scale_color_brewer(palette = "PuBuGn") +
-  labs(
-    title = "Points Per Week",
-   color = "Mgr"
-  ) +
-  geom_text_repel(aes(label = ManagerMatch),
-                  force = 1, point.padding = 0.1,
-                  segment.size = 0.2
-  ) 
-  
 
   
 
@@ -314,7 +287,7 @@ ui <- shinyUI(
                             ),
                             tabPanel("Team Performance Analytics",
                                      fluidRow(
-                                       splitLayout(plotOutput("graph4"),
+                                       splitLayout(
                                                    plotOutput("graph5"),
                                                    plotOutput("graph6")
                                      )))
