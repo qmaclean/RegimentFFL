@@ -1,6 +1,8 @@
 # RegimentFFL
 Shiny App for Regiment Fantasy Football League
 
+Data Collection Script: DownloadYahooFFSingleLeagueData.ipynb
+
 Link to Application: https://quinn-maclean.shinyapps.io/RegimentApp/
 
 ## Draft
